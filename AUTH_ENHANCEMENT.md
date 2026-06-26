@@ -301,7 +301,7 @@ For production, you'd want:
 
 ## Summary
 
-You've now added:
+We've now added:
 - ✅ **API Key Authentication** middleware
 - ✅ **Security** to protect endpoints
 - ✅ **Optional** authentication (can disable for dev/test)
@@ -329,4 +329,3 @@ This enhancement demonstrates:
 
 ---
 
-**Great job implementing a realistic security pattern! 🔒**
