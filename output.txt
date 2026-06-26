@@ -1,0 +1,92 @@
+PS C:\Users\Amar\OneDrive\Desktop\CLUSTER RESOURCE TELEMETRY DASHBOARD\kvstore> go build -o kvstore.exe
+PS C:\Users\Amar\OneDrive\Desktop\CLUSTER RESOURCE TELEMETRY DASHBOARD\kvstore> .\kvstore.exe
+2026/06/26 13:47:50 API Key: demo-api-key-12345 (include in request header: X-API-Key: demo-api-key-12345)
+2026/06/26 13:47:50 Starting HTTP server on :8080
+2026/06/26 13:47:50 Cleanup routine started (interval: 30s)
+
+
+
+# TEST USING API KEYS:---
+
+PS C:\Users\Amar> $body = @{value="hello world"} | ConvertTo-Json
+PS C:\Users\Amar> Invoke-WebRequest -Uri http://localhost:8080/api/keys/test `
+>>   -Method POST `
+>>   -Headers @{"Content-Type"="application/json"} `
+>>   -Body $body
+
+Security Warning: Script Execution Risk
+Invoke-WebRequest parses the content of the web page. Script code in the
+web page might be run when the page is parsed.
+      RECOMMENDED ACTION:
+      Use the -UseBasicParsing switch to avoid script code execution.
+
+      Do you want to continue?
+
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "N"):Y
+
+
+StatusCode        : 201
+StatusDescription : Created
+Content           : {"key":"test","status":"created"}
+
+RawContent        : HTTP/1.1 201 Created
+                    Content-Length: 34
+                    Content-Type: application/json
+                    Date: Fri, 26 Jun 2026 08:13:12 GMT
+
+                    {"key":"test","status":"created"}
+
+Forms             : {}
+Headers           : {[Content-Length, 34], [Content-Type,
+                    application/json], [Date, Fri, 26 Jun 2026 08:13:12
+                    GMT]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 34
+
+
+
+PS C:\Users\Amar> ^C
+PS C:\Users\Amar> $apiKey = "demo-api-key-12345"
+PS C:\Users\Amar> $body = @{value="authenticated"} | ConvertTo-Json
+PS C:\Users\Amar> Invoke-WebRequest -Uri http://localhost:8080/api/keys/test `
+>>   -Method POST `
+>>   -Headers @{"Content-Type"="application/json"; "X-API-Key"=$apiKey} `
+>>   -Body $body
+
+Security Warning: Script Execution Risk
+Invoke-WebRequest parses the content of the web page. Script code in the
+web page might be run when the page is parsed.
+      RECOMMENDED ACTION:
+      Use the -UseBasicParsing switch to avoid script code execution.
+
+      Do you want to continue?
+
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "N"):Y
+
+
+StatusCode        : 201
+StatusDescription : Created
+Content           : {"key":"test","status":"created"}
+
+RawContent        : HTTP/1.1 201 Created
+                    Content-Length: 34
+                    Content-Type: application/json
+                    Date: Fri, 26 Jun 2026 08:18:10 GMT
+
+                    {"key":"test","status":"created"}
+
+Forms             : {}
+Headers           : {[Content-Length, 34], [Content-Type,
+                    application/json], [Date, Fri, 26 Jun 2026 08:18:10
+                    GMT]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 34
+
