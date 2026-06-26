@@ -227,59 +227,10 @@ go test -v -race ./...
 - ✅ **Follows Go idioms** (defer, error returns, etc.)
 - ✅ **Proper resource cleanup** (goroutines, mutexes)
 
----
 
-## Interview Talking Points
-
-**"Tell me about a project that demonstrates concurrency knowledge."**
-
-"I built an in-memory key-value store in Go to learn concurrency patterns. The key challenge was ensuring thread-safety while maximizing throughput.
-
-I used `sync.RWMutex` to allow multiple concurrent reads while ensuring exclusive writes. This is critical for performance in read-heavy workloads like caching.
-
-The project also includes:
-- Background cleanup goroutine to prevent memory leaks
-- Graceful shutdown handling
-- Comprehensive tests, including concurrent stress tests
-- Race detection (`-race` flag) to catch subtle bugs
-
-This taught me how to reason about concurrency, manage shared state safely, and build systems that perform well under load."
 
 ---
 
-## Next Steps
-
-### Beginner
-1. Read through all code with comments
-2. Run the server and test endpoints
-3. Modify a simple method (e.g., `GetAll()`)
-4. Write a concurrent test
-
-### Intermediate
-1. Add persistence (save to disk)
-2. Add authentication (API key header)
-3. Implement LRU eviction
-4. Add rate limiting
-
-### Advanced
-1. Add clustering/replication
-2. Implement transactions
-3. Add Raft consensus
-4. Prometheus metrics
-
----
-
-## Time Investment
-
-| Phase | Time | What |
-|-------|------|------|
-| Study | 2-3 hours | Read code and documentation |
-| Experiment | 2-3 hours | Modify, test, understand |
-| Enhance | 4-6 hours | Add features (persistence, auth) |
-| Interview Prep | 2-3 hours | Prepare demo and talking points |
-| **Total** | **10-15 hours** | Production-grade portfolio project |
-
----
 
 ## Resources
 
@@ -289,12 +240,6 @@ This taught me how to reason about concurrency, manage shared state safely, and 
 - `CONCURRENCY_GUIDE.md` - Deep dive into patterns
 - `LEARNING_PATH.md` - Structured learning
 
-### External Resources
-- [Effective Go](https://golang.org/doc/effective_go)
-- [sync Package Docs](https://pkg.go.dev/sync)
-- [Go Concurrency Patterns Video](https://www.youtube.com/watch?v=f6kdp27TYZs)
-
----
 
 ## Summary
 
@@ -314,4 +259,3 @@ It's designed to be:
 
 ---
 
-**This is your portfolio project. Study it thoroughly, understand every line, and you'll be well-prepared to discuss concurrency and memory management in Go interviews. 🎯**
