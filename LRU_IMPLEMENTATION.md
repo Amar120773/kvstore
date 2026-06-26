@@ -320,27 +320,4 @@ curl -X GET http://localhost:8080/api/stats \
    - Consider distributed caching (Redis, Memcached)
    - Implement persistence for critical data
 
-## Interview Discussion Points
 
-1. **Trade-offs of the current implementation**
-   - O(n) eviction simplicity vs performance
-   - When to optimize to O(1)
-
-2. **Thread-safety under eviction**
-   - How lock upgrades prevent race conditions
-   - Why double-check is needed
-
-3. **Accuracy vs Performance**
-   - Why Get() updates LastAccessed despite overhead
-   - Alternative strategies and their trade-offs
-
-4. **Scaling considerations**
-   - How to optimize for millions of keys
-   - Distributed cache alternatives
-
-## See Also
-
-- [CONCURRENCY_GUIDE.md](CONCURRENCY_GUIDE.md) - Go concurrency patterns
-- [store/store.go](store/store.go) - Full LRU implementation
-- [store/store_test.go](store/store_test.go) - LRU test cases
-- [main.go](main.go) - Configuration example
